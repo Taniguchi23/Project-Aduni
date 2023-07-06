@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/app}">
+
+<div layout:fragment="content">
+    <div class="pagetitle">
+        <h1 class="text-info">Generador de exámenes</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                <li class="breadcrumb-item">Examenes</li>
+                <li class="breadcrumb-item active">Generador</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+    <section class="section">
+        <div class="row">
+
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        <!-- General Form Elements -->
+                        <form>
+
+                            <fieldset class="row mb-3 mt-4">
+                                <legend class="col-form-label col-sm-2 pt-0">Universidad</legend> <p></p>
+                                <div class="col-sm-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios1" value="option1" >
+                                        <label class="form-check-label" for="gridRadios1">
+                                            UNMSM
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios1" value="option1" >
+                                        <label class="form-check-label" for="gridRadios1">
+                                            Villareal
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios1" value="option1" >
+                                        <label class="form-check-label" for="gridRadios1">
+                                            Cantuta
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset class="row mb-3 mt-4">
+                                <legend class="col-form-label col-sm-2 pt-0">Fecha</legend> <p></p>
+                                <div class="col-sm-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" >
+                                        <label class="form-check-label" for="gridRadios1">
+                                            Mas antiguo
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" >
+                                        <label class="form-check-label" for="gridRadios1">
+                                            Mas reciente
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" >
+                                        <label class="form-check-label" for="gridRadios1">
+                                            Aleatorio
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset class="row mb-3">
+                                <legend class="col-form-label col-sm-2 pt-0">Cursos</legend> <p></p>
+                                <div class="col-sm-10">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gridRadios1" id="gridRadios1" value="option2" >
+                                        <label class="form-check-label" for="gridRadios1">
+                                            Historia del Perú
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios1" value="option4" >
+                                        <label class="form-check-label" for="gridRadios1">
+                                            Historia del Universal
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios1" value="option3" >
+                                        <label class="form-check-label" for="gridRadios1">
+                                            Comunicación
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gridRadios4" id="gridRadios2" value="option5" >
+                                        <label class="form-check-label" for="gridRadios1">
+                                            Biología
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gridRadios4" id="gridRadios2" value="option5" >
+                                        <label class="form-check-label" for="gridRadios1">
+                                            Filosofía
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gridRadios4" id="gridRadios2" value="option5" >
+                                        <label class="form-check-label" for="gridRadios1">
+                                            Economía
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label"></label>
+                                <div class="col-sm-10">
+                                    <button type="button" class="btn btn-primary btnGenerar">Generar examen</button>
+                                </div>
+                            </div>
+
+                        </form><!-- End General Form Elements -->
+
+                    </div>
+
+                    <div class="card-body" id="cuerpoExamen" style="display: none">
+                        <div>
+                            <p>UNMSM-2022</p>
+                            <p>Las esponjas de mar y las amebas dependen de la digestión intracelular. Las sustancias suelen desplazarse a través de la membrana celular mediante procesos que pueden clasificarse como activos o pasivos, según requieran o no de energía. ¿Cómo se denomina el proceso donde extensiones de la membrana engullen partículas extracelulares para degradarlas en el interior celular? </p>
+                            <input type="checkbox" > <label > a)Permeabilidad</label>  <br>
+                            <input type="checkbox" class="respuestaCorrecta" > <label > b)Fagocitosis</label>  <br>
+                            <input type="checkbox" > <label > c)Citocinesis</label>  <br>
+                            <input type="checkbox" class="respuestaIncorrecta"> <label >d)Exocitosis </label> <br>
+                            <input type="checkbox" > <label >e)Cocifesis</label>  <br>
+                        </div>
+                        <div>
+                            <p>UNMSM-2022</p>
+                            <p>Las esponjas de mar y las amebas dependen de la digestión intracelular. Las sustancias suelen desplazarse a través de la membrana celular mediante procesos que pueden clasificarse como activos o pasivos, según requieran o no de energía. ¿Cómo se denomina el proceso donde extensiones de la membrana engullen partículas extracelulares para degradarlas en el interior celular? </p>
+                            <input type="checkbox" > <label > a)Permeabilidad</label>  <br>
+                            <input type="checkbox" class="respuestaCorrecta" > <label > b)Fagocitosis</label>  <br>
+                            <input type="checkbox" > <label > c)Citocinesis</label>  <br>
+                            <input type="checkbox" class="respuestaIncorrecta"> <label >d)Exocitosis </label> <br>
+                            <input type="checkbox" > <label >e)Cocifesis</label>  <br>
+                        </div>
+                        <div>
+                            <p>UNMSM-2022</p>
+                            <p>Las esponjas de mar y las amebas dependen de la digestión intracelular. Las sustancias suelen desplazarse a través de la membrana celular mediante procesos que pueden clasificarse como activos o pasivos, según requieran o no de energía. ¿Cómo se denomina el proceso donde extensiones de la membrana engullen partículas extracelulares para degradarlas en el interior celular? </p>
+                            <input type="checkbox" > <label > a)Permeabilidad</label>  <br>
+                            <input type="checkbox" class="respuestaCorrecta" > <label > b)Fagocitosis</label>  <br>
+                            <input type="checkbox" > <label > c)Citocinesis</label>  <br>
+                            <input type="checkbox" class="respuestaIncorrecta"> <label >d)Exocitosis </label> <br>
+                            <input type="checkbox" > <label >e)Cocifesis</label>  <br>
+                        </div>
+                        <div>
+                            <p>UNMSM-2022</p>
+                            <p>Las esponjas de mar y las amebas dependen de la digestión intracelular. Las sustancias suelen desplazarse a través de la membrana celular mediante procesos que pueden clasificarse como activos o pasivos, según requieran o no de energía. ¿Cómo se denomina el proceso donde extensiones de la membrana engullen partículas extracelulares para degradarlas en el interior celular? </p>
+                            <input type="checkbox" > <label > a)Permeabilidad</label>  <br>
+                            <input type="checkbox" class="respuestaCorrecta" > <label > b)Fagocitosis</label>  <br>
+                            <input type="checkbox" > <label > c)Citocinesis</label>  <br>
+                            <input type="checkbox" class="respuestaIncorrecta"> <label >d)Exocitosis </label> <br>
+                            <input type="checkbox" > <label >e)Cocifesis</label>  <br>
+                        </div>
+                        <div>
+                            <p>UNMSM-2022</p>
+                            <p>Las esponjas de mar y las amebas dependen de la digestión intracelular. Las sustancias suelen desplazarse a través de la membrana celular mediante procesos que pueden clasificarse como activos o pasivos, según requieran o no de energía. ¿Cómo se denomina el proceso donde extensiones de la membrana engullen partículas extracelulares para degradarlas en el interior celular? </p>
+                            <input type="checkbox" > <label > a)Permeabilidad</label>  <br>
+                            <input type="checkbox" class="respuestaCorrecta" > <label > b)Fagocitosis</label>  <br>
+                            <input type="checkbox" > <label > c)Citocinesis</label>  <br>
+                            <input type="checkbox" class="respuestaIncorrecta"> <label >d)Exocitosis </label> <br>
+                            <input type="checkbox" > <label >e)Cocifesis</label>  <br>
+                        </div>
+
+
+                        <button class=" m-5 btn btn-outline-danger text-center btnEnviarRespuesta"> Enviar Respuestas</button>
+                        <h3  class="text-center text-black respuestaTotal" style="display:none;"> Su puntaje es de : <span class="text-danger">0/10 </span></h3>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
+
+</html>
