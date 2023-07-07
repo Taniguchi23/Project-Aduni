@@ -12,7 +12,8 @@
                 <!-- Table with stripped rows -->
                 <table class="table table-striped">
                     <thead>
-                    <tr>
+
+                    <tr >
                         <th scope="col">#</th>
                         <th scope="col">Curso</th>
                         <th scope="col">Tiempo</th>
@@ -21,40 +22,12 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Historia del Perú</td>
-                        <td>30:00</td>
-                        <td>11</td>
-                        <td>2023-05-25</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Comunicación</td>
-                        <td>25:00</td>
-                        <td>12</td>
-                        <td>2023-05-25</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Biología</td>
-                        <td>35:00</td>
-                        <td>10</td>
-                        <td>2023-05-26</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Historia Universal</td>
-                        <td>25:00</td>
-                        <td>12</td>
-                        <td>2023-05-29</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">5</th>
-                        <td>Filosofía</td>
-                        <td>25:00</td>
-                        <td>18</td>
-                        <td>2023-05-30</td>
+                    <tr th:each="resultado , key : ${listaResultado}">
+                        <th scope="row" th:text="${key.index +1}"></th>
+                        <td th:text="${resultado.curso}"></td>
+                        <td th:text="${resultado.tiempo}"></td>
+                        <td th:text="${resultado.nota}"></td>
+                        <td th:text="${resultado.fecha_realizada}"></td>
                     </tr>
 
                     </tbody>
