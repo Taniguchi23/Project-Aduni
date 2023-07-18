@@ -1,8 +1,8 @@
-package com.aduni.exams.controller;
+package com.aduni.exams.usuarios.controller;
 
 
-import com.aduni.exams.entity.Resultado;
-import com.aduni.exams.service.ResultadoService;
+import com.aduni.exams.usuarios.entity.Resultado;
+import com.aduni.exams.usuarios.service.ResultadoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

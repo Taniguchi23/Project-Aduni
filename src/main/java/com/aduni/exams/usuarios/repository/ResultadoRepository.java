@@ -1,6 +1,6 @@
-package com.aduni.exams.repository;
+package com.aduni.exams.usuarios.repository;
 
-import com.aduni.exams.entity.Resultado;
+import com.aduni.exams.usuarios.entity.Resultado;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

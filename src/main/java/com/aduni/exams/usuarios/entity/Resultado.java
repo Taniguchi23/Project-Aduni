@@ -1,4 +1,4 @@
-package com.aduni.exams.entity;
+package com.aduni.exams.usuarios.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;

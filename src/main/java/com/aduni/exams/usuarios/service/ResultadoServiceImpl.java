@@ -1,7 +1,7 @@
-package com.aduni.exams.service;
+package com.aduni.exams.usuarios.service;
 
-import com.aduni.exams.entity.Resultado;
-import com.aduni.exams.repository.ResultadoRepository;
+import com.aduni.exams.usuarios.entity.Resultado;
+import com.aduni.exams.usuarios.repository.ResultadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

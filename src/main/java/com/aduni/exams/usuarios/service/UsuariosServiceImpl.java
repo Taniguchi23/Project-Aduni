@@ -1,4 +1,4 @@
-package com.aduni.exams.service;
+package com.aduni.exams.usuarios.service;
 
 import org.springframework.stereotype.Service;
 

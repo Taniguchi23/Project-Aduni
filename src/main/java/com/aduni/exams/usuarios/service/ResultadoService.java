@@ -1,6 +1,6 @@
-package com.aduni.exams.service;
+package com.aduni.exams.usuarios.service;
 
-import com.aduni.exams.entity.Resultado;
+import com.aduni.exams.usuarios.entity.Resultado;
 
 import java.util.List;
 

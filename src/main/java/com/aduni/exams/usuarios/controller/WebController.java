@@ -1,4 +1,4 @@
-package com.aduni.exams.controller;
+package com.aduni.exams.usuarios.controller;
 
 
 import lombok.extern.slf4j.Slf4j;
