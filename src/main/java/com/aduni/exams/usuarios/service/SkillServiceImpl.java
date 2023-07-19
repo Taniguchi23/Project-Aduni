@@ -27,9 +27,9 @@ public class SkillServiceImpl implements SkillService {
     public Skill entregarNota(Map<String, String> allParams) {
 
         HttpSession session = request.getSession();
-       // Integer authId = (Integer) session.getAttribute("authId");
-      //  Usuario usuario = usuarioRepository.getById(authId);
-        Usuario usuario = usuarioRepository.getById(1);
+        Integer authId = (Integer) session.getAttribute("authId");
+        Usuario usuario = usuarioRepository.getById(authId);
+       // Usuario usuario = usuarioRepository.getById(1);
         Skill skill= skillRepository.findFirstByUsuarioId(usuario.getId());
 
 
