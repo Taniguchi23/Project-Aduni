@@ -4,8 +4,295 @@
       layout:decorate="~{layout/app}">
 
 <div layout:fragment="content">
-  <h1>Welcome to the Users page!  Dashboard</h1>
-  <p>This is the content of the Users page.</p>
+  <div class="card-body pb-0">
+    <h5 class="card-title">Kevin Anderson <span>| Mis Skills</span></h5>
+    <div id="budgetChart" style="min-height: 400px;" class="echart"></div>
+    <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                var budgetChart = echarts.init(document.querySelector("#budgetChart")).setOption({
+                    legend: {
+                        data: ['Dominio Actual', 'Dominio Anterior']
+                    },
+                    radar: {
+                        // shape: 'circle',
+                        indicator: [{
+                            name: 'Historia del Perú',
+                            max: 6500
+                        },
+                            {
+                                name: 'Comunicación',
+                                max: 16000
+                            },
+                            {
+                                name: 'Biología',
+                                max: 30000
+                            },
+                            {
+                                name: 'Historia Universal',
+                                max: 38000
+                            },
+                            {
+                                name: 'Filosofía',
+                                max: 52000
+                            },
+                            {
+                                name: 'Economía',
+                                max: 25000
+                            }
+                        ]
+                    },
+                    series: [{
+                        name: 'Budget vs spending',
+                        type: 'radar',
+                        data: [{
+                            value: [2300, 3000, 20000, 35000, 50000, 18000],
+                            name: 'Dominio Actual'
+                        },
+                            {
+                                value: [2700, 4000, 18000, 26000, 42000, 21000],
+                                name: 'Dominio Anterior'
+                            }
+                        ]
+                    }]
+                });
+            });
+        </script>
+
+  </div>
+
+
+  <section class="section mt-4">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Biología</h5>
+            <!-- Line Chart -->
+            <canvas id="lineChart3" style="max-height: 400px;"></canvas>
+            <script>
+                            document.addEventListener("DOMContentLoaded", () => {
+                                new Chart(document.querySelector('#lineChart3'), {
+                                    type: 'line',
+                                    data: {
+                                        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                                        datasets: [{
+                                            label: 'Puntaje',
+                                            data: [18, 20, 17, 17, 19, 17, 19],
+                                            fill: false,
+                                            borderColor: 'rgb(75, 192, 192)',
+                                            tension: 0.1
+                                        }]
+                                    },
+                                    options: {
+                                        scales: {
+                                            y: {
+                                                beginAtZero: true
+                                            }
+                                        }
+                                    }
+                                });
+                            });
+                        </script>
+            <!-- End Line CHart -->
+
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Historia Universal</h5>
+
+            <!-- Line Chart -->
+            <canvas id="lineChart4" style="max-height: 400px;"></canvas>
+            <script>
+                            document.addEventListener("DOMContentLoaded", () => {
+                                new Chart(document.querySelector('#lineChart4'), {
+                                    type: 'line',
+                                    data: {
+                                        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                                        datasets: [{
+                                            label: 'Puntaje',
+                                            data: [18, 18, 17, 17, 20, 19, 19],
+                                            fill: false,
+                                            borderColor: 'rgb(75, 192, 192)',
+                                            tension: 0.1
+                                        }]
+                                    },
+                                    options: {
+                                        scales: {
+                                            y: {
+                                                beginAtZero: true
+                                            }
+                                        }
+                                    }
+                                });
+                            });
+                        </script>
+            <!-- End Line CHart -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Filosofía</h5>
+
+            <!-- Line Chart -->
+            <canvas id="lineChart5" style="max-height: 400px;"></canvas>
+            <script>
+                            document.addEventListener("DOMContentLoaded", () => {
+                                new Chart(document.querySelector('#lineChart5'), {
+                                    type: 'line',
+                                    data: {
+                                        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                                        datasets: [{
+                                            label: 'Puntaje',
+                                            data: [18, 20, 11, 17, 11, 12, 19],
+                                            fill: false,
+                                            borderColor: 'rgb(75, 192, 192)',
+                                            tension: 0.1
+                                        }]
+                                    },
+                                    options: {
+                                        scales: {
+                                            y: {
+                                                beginAtZero: true
+                                            }
+                                        }
+                                    }
+                                });
+                            });
+                        </script>
+            <!-- End Line CHart -->
+
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Economía</h5>
+
+            <!-- Line Chart -->
+            <canvas id="lineChart6" style="max-height: 400px;"></canvas>
+            <script>
+                            document.addEventListener("DOMContentLoaded", () => {
+                                new Chart(document.querySelector('#lineChart6'), {
+                                    type: 'line',
+                                    data: {
+                                        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                                        datasets: [{
+                                            label: 'Puntaje',
+                                            data: [18, 15, 11, 17, 16, 12, 19],
+                                            fill: false,
+                                            borderColor: 'rgb(75, 192, 192)',
+                                            tension: 0.1
+                                        }]
+                                    },
+                                    options: {
+                                        scales: {
+                                            y: {
+                                                beginAtZero: true
+                                            }
+                                        }
+                                    }
+                                });
+                            });
+                        </script>
+            <!-- End Line CHart -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Comunicación</h5>
+
+            <!-- Line Chart -->
+            <canvas id="lineChart" style="max-height: 400px;"></canvas>
+            <script>
+                            document.addEventListener("DOMContentLoaded", () => {
+                                new Chart(document.querySelector('#lineChart'), {
+                                    type: 'line',
+                                    data: {
+                                        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                                        datasets: [{
+                                            label: 'Puntaje',
+                                            data: [8, 20, 11, 17, 11, 12, 10],
+                                            fill: false,
+                                            borderColor: 'rgb(75, 192, 192)',
+                                            tension: 0.1
+                                        }]
+                                    },
+                                    options: {
+                                        scales: {
+                                            y: {
+                                                beginAtZero: true
+                                            }
+                                        }
+                                    }
+                                });
+                            });
+                        </script>
+            <!-- End Line CHart -->
+
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Historia del Perú</h5>
+
+            <!-- Line Chart -->
+            <canvas id="lineChart2" style="max-height: 400px;"></canvas>
+            <script>
+                            document.addEventListener("DOMContentLoaded", () => {
+                                new Chart(document.querySelector('#lineChart2'), {
+                                    type: 'line',
+                                    data: {
+                                        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                                        datasets: [{
+                                            label: 'Puntaje',
+                                            data: [18, 20, 11, 7, 11, 12, 9],
+                                            fill: false,
+                                            borderColor: 'rgb(75, 192, 192)',
+                                            tension: 0.1
+                                        }]
+                                    },
+                                    options: {
+                                        scales: {
+                                            y: {
+                                                beginAtZero: true
+                                            }
+                                        }
+                                    }
+                                });
+                            });
+                        </script>
+            <!-- End Line CHart -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- End Budget Report -->
+
+
+
+<div layout:fragment="script">
+
 </div>
 
 </html>
