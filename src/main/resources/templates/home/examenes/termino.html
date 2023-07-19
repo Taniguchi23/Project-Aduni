@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/app}">
+
+<div layout:fragment="content">
+    <div class="card m-3">
+        <h3 class="text-center text-success">Evaluación concluida</h3>
+        <label class="">Su nota de Historia del Perú es : <span th:text="${skill.historia_peru_b}"></span></label>
+        <label class="">Su nota de Economía  es : <span th:text="${skill.economia_b}"></span></label>
+        <label class="">Su nota de Filosofía es : <span th:text="${skill.filosofia_b}"></span></label>
+        <label class="">Su nota de Historia Universal del Perú es : <span th:text="${skill.historia_universal_b}"></span></label>
+        <label class="">Su nota de Biología es : <span th:text="${skill.biologia_b}"></span></label>
+        <label class="">Su nota de Comunicación es : <span th:text="${skill.comunicacion_b}"></span></label>
+    </div>
+</div>
+
+</html>

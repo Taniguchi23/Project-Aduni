@@ -19,291 +19,42 @@
 
             <div class="col-lg-12">
 
-                <div class="card">
-                    <div class="card-body">
-                        <!-- General Form Elements -->
-                        <form>
+                <!--div class="card">
+                    <div th:each="preguntaDto : ${preguntas}">
+                        <h3>Pregunta: <span th:text="${preguntaDto.pregunta.pregunta}"></span></h3>
+                        <ul>
 
-                            <fieldset class="row mb-3 mt-4">
-                                <legend class="col-form-label col-sm-2 pt-0">Universidad</legend> <p></p>
-                                <div class="col-sm-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios1" value="option1" >
-                                        <label class="form-check-label" for="gridRadios1">
-                                            UNMSM
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios1" value="option1" >
-                                        <label class="form-check-label" for="gridRadios1">
-                                            Villareal
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios1" value="option1" >
-                                        <label class="form-check-label" for="gridRadios1">
-                                            Cantuta
-                                        </label>
-                                    </div>
-                                </div>
-                            </fieldset>
-
-                            <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label"></label>
-                                <div class="col-sm-10">
-                                    <button type="button" class="btn btn-primary btnGenerar">Realizar examen</button>
-                                </div>
-                            </div>
-
-                        </form><!-- End General Form Elements -->
-
+                            <li th:each="alternativa : ${preguntaDto.alternativas}">
+                                <input type="radio" th:id="'pregunta_' + ${preguntaDto.pregunta.id}" th:name="'pregunta_' + ${preguntaDto.pregunta.id}" th:value="${alternativa.id}" />
+                                <label th:for="'pregunta_' + ${preguntaDto.pregunta.id}" th:text="${alternativa.pregunta}"></label>
+                            </li>
+                        </ul>
                     </div>
-
-                    <div class="card-body" id="cuerpoExamen" style="display: none">
-                        <h4 class="text-info">Biología</h4>
-                        <div>
-                            <p>UNMSM-2022</p>
-                            <p>Las esponjas de mar y las amebas dependen de la digestión intracelular. Las sustancias suelen desplazarse a través de la membrana celular mediante procesos que pueden clasificarse como activos o pasivos, según requieran o no de energía. ¿Cómo se denomina el proceso donde extensiones de la membrana engullen partículas extracelulares para degradarlas en el interior celular? </p>
-                            <input type="checkbox" > <label > a)Permeabilidad</label>  <br>
-                            <input type="checkbox" class="respuestaCorrecta" > <label > b)Fagocitosis</label>  <br>
-                            <input type="checkbox" > <label > c)Citocinesis</label>  <br>
-                            <input type="checkbox" class="respuestaIncorrecta"> <label >d)Exocitosis </label> <br>
-                            <input type="checkbox" > <label >e)Cocifesis</label>  <br>
-                        </div>
-                        <div>
-                            <p>UNMSM-2022</p>
-                            <p>Las esponjas de mar y las amebas dependen de la digestión intracelular. Las sustancias suelen desplazarse a través de la membrana celular mediante procesos que pueden clasificarse como activos o pasivos, según requieran o no de energía. ¿Cómo se denomina el proceso donde extensiones de la membrana engullen partículas extracelulares para degradarlas en el interior celular? </p>
-                            <input type="checkbox" > <label > a)Permeabilidad</label>  <br>
-                            <input type="checkbox" class="respuestaCorrecta" > <label > b)Fagocitosis</label>  <br>
-                            <input type="checkbox" > <label > c)Citocinesis</label>  <br>
-                            <input type="checkbox" class="respuestaIncorrecta"> <label >d)Exocitosis </label> <br>
-                            <input type="checkbox" > <label >e)Cocifesis</label>  <br>
-                        </div>
-                        <div>
-                            <p>UNMSM-2022</p>
-                            <p>Las esponjas de mar y las amebas dependen de la digestión intracelular. Las sustancias suelen desplazarse a través de la membrana celular mediante procesos que pueden clasificarse como activos o pasivos, según requieran o no de energía. ¿Cómo se denomina el proceso donde extensiones de la membrana engullen partículas extracelulares para degradarlas en el interior celular? </p>
-                            <input type="checkbox" > <label > a)Permeabilidad</label>  <br>
-                            <input type="checkbox" class="respuestaCorrecta" > <label > b)Fagocitosis</label>  <br>
-                            <input type="checkbox" > <label > c)Citocinesis</label>  <br>
-                            <input type="checkbox" class="respuestaIncorrecta"> <label >d)Exocitosis </label> <br>
-                            <input type="checkbox" > <label >e)Cocifesis</label>  <br>
-                        </div>
-                        <div>
-                            <p>UNMSM-2022</p>
-                            <p>Las esponjas de mar y las amebas dependen de la digestión intracelular. Las sustancias suelen desplazarse a través de la membrana celular mediante procesos que pueden clasificarse como activos o pasivos, según requieran o no de energía. ¿Cómo se denomina el proceso donde extensiones de la membrana engullen partículas extracelulares para degradarlas en el interior celular? </p>
-                            <input type="checkbox" > <label > a)Permeabilidad</label>  <br>
-                            <input type="checkbox" class="respuestaCorrecta" > <label > b)Fagocitosis</label>  <br>
-                            <input type="checkbox" > <label > c)Citocinesis</label>  <br>
-                            <input type="checkbox" class="respuestaIncorrecta"> <label >d)Exocitosis </label> <br>
-                            <input type="checkbox" > <label >e)Cocifesis</label>  <br>
-                        </div>
-                        <br>
-                        <h4 class="text-info">Historia Universal</h4>
-                        <div>
-                            <p>UNMSM-2022</p>
-                            <p>En la antigua Roma, ¿cuál fue la forma de gobierno caracterizada por el gobierno de un solo hombre con poder absoluto? </p>
-                            <input type="checkbox" > <label > a)Monarquía</label>  <br>
-                            <input type="checkbox" class="respuestaCorrecta" > <label > b)Dictadura</label>  <br>
-                            <input type="checkbox" > <label > c)República</label>  <br>
-                            <input type="checkbox" class="respuestaIncorrecta"> <label >d)Democracia </label> <br>
-                            <input type="checkbox" > <label >e)Teocracia</label>  <br>
-                        </div>
-                        <div>
-                            <p>UNMSM-2022</p>
-                            <p>En la antigua Roma, ¿cuál fue la forma de gobierno caracterizada por el gobierno de un solo hombre con poder absoluto? </p>
-                            <input type="checkbox" > <label > a)Monarquía</label>  <br>
-                            <input type="checkbox" class="respuestaCorrecta" > <label > b)Dictadura</label>  <br>
-                            <input type="checkbox" > <label > c)República</label>  <br>
-                            <input type="checkbox" class="respuestaIncorrecta"> <label >d)Democracia </label> <br>
-                            <input type="checkbox" > <label >e)Teocracia</label>  <br>
-                        </div>
-                        <div>
-                            <p>UNMSM-2022</p>
-                            <p>En la antigua Roma, ¿cuál fue la forma de gobierno caracterizada por el gobierno de un solo hombre con poder absoluto? </p>
-                            <input type="checkbox" > <label > a)Monarquía</label>  <br>
-                            <input type="checkbox" class="respuestaCorrecta" > <label > b)Dictadura</label>  <br>
-                            <input type="checkbox" > <label > c)República</label>  <br>
-                            <input type="checkbox" class="respuestaIncorrecta"> <label >d)Democracia </label> <br>
-                            <input type="checkbox" > <label >e)Teocracia</label>  <br>
-                        </div>
-                        <div>
-                            <p>UNMSM-2022</p>
-                            <p>En la antigua Roma, ¿cuál fue la forma de gobierno caracterizada por el gobierno de un solo hombre con poder absoluto? </p>
-                            <input type="checkbox" > <label > a)Monarquía</label>  <br>
-                            <input type="checkbox" class="respuestaCorrecta" > <label > b)Dictadura</label>  <br>
-                            <input type="checkbox" > <label > c)República</label>  <br>
-                            <input type="checkbox" class="respuestaIncorrecta"> <label >d)Democracia </label> <br>
-                            <input type="checkbox" > <label >e)Teocracia</label>  <br>
-                        </div>
-                        <br>
-                        <h4 class="text-info">Historia del Perú</h4>
-                        <div>
-                            <p>UNMSM-2022</p>
-                            <p>¿Cuál fue la cultura preincaica que se desarrolló en la región costera del Perú y destacó por su cerámica de gran calidad y sus avances en agricultura y arquitectura? </p>
-                            <input type="checkbox" class="respuestaCorrecta" > <label > a)Cultura Moche</label>  <br>
-                            <input type="checkbox" > <label > b)Cultura Inca</label>  <br>
-                            <input type="checkbox" > <label > c)Cultura Chavín</label>  <br>
-                            <input type="checkbox" > <label >d)Cultura Nazca </label> <br>
-                            <input type="checkbox" class="respuestaIncorrecta"> <label >e)Cultura Paracas</label>  <br>
-                        </div>
-                        <div>
-                            <p>UNMSM-2022</p>
-                            <p>¿Cuál fue la cultura preincaica que se desarrolló en la región costera del Perú y destacó por su cerámica de gran calidad y sus avances en agricultura y arquitectura? </p>
-                            <input type="checkbox" class="respuestaCorrecta" > <label > a)Cultura Moche</label>  <br>
-                            <input type="checkbox" > <label > b)Cultura Inca</label>  <br>
-                            <input type="checkbox" > <label > c)Cultura Chavín</label>  <br>
-                            <input type="checkbox" > <label >d)Cultura Nazca </label> <br>
-                            <input type="checkbox" class="respuestaIncorrecta"> <label >e)Cultura Paracas</label>  <br>
-                        </div>
-                        <div>
-                            <p>UNMSM-2022</p>
-                            <p>¿Cuál fue la cultura preincaica que se desarrolló en la región costera del Perú y destacó por su cerámica de gran calidad y sus avances en agricultura y arquitectura? </p>
-                            <input type="checkbox" class="respuestaCorrecta" > <label > a)Cultura Moche</label>  <br>
-                            <input type="checkbox" > <label > b)Cultura Inca</label>  <br>
-                            <input type="checkbox" > <label > c)Cultura Chavín</label>  <br>
-                            <input type="checkbox" > <label >d)Cultura Nazca </label> <br>
-                            <input type="checkbox" class="respuestaIncorrecta"> <label >e)Cultura Paracas</label>  <br>
-                        </div>
-                        <div>
-                            <p>UNMSM-2022</p>
-                            <p>¿Cuál fue la cultura preincaica que se desarrolló en la región costera del Perú y destacó por su cerámica de gran calidad y sus avances en agricultura y arquitectura? </p>
-                            <input type="checkbox" class="respuestaCorrecta" > <label > a)Cultura Moche</label>  <br>
-                            <input type="checkbox" > <label > b)Cultura Inca</label>  <br>
-                            <input type="checkbox" > <label > c)Cultura Chavín</label>  <br>
-                            <input type="checkbox" > <label >d)Cultura Nazca </label> <br>
-                            <input type="checkbox" class="respuestaIncorrecta"> <label >e)Cultura Paracas</label>  <br>
-                        </div>
-                        <br>
-                        <h4 class="text-info">Filosofía</h4>
-                        <div>
-                            <p>UNMSM-2022</p>
-                            <p>¿Quién es considerado el padre de la filosofía occidental y uno de los filósofos más influyentes de la historia?</p>
-                            <input type="checkbox" class="respuestaCorrecta"> <label >a)Sócrates</label>  <br>
-                            <input type="checkbox" > <label >b)Platón</label>  <br>
-                            <input type="checkbox" > <label >c)Aristóteles</label>  <br>
-                            <input type="checkbox" > <label >d)Descartes</label> <br>
-                            <input type="checkbox" class="respuestaIncorrecta"> <label >e)Kant</label>  <br>
-                        </div>
-                        <div>
-                            <p>UNMSM-2022</p>
-                            <p>¿Quién es considerado el padre de la filosofía occidental y uno de los filósofos más influyentes de la historia?</p>
-                            <input type="checkbox" class="respuestaCorrecta"> <label >a)Sócrates</label>  <br>
-                            <input type="checkbox" > <label >b)Platón</label>  <br>
-                            <input type="checkbox" > <label >c)Aristóteles</label>  <br>
-                            <input type="checkbox" > <label >d)Descartes</label> <br>
-                            <input type="checkbox" class="respuestaIncorrecta"> <label >e)Kant</label>  <br>
-                        </div>
-                        <div>
-                            <p>UNMSM-2022</p>
-                            <p>¿Quién es considerado el padre de la filosofía occidental y uno de los filósofos más influyentes de la historia?</p>
-                            <input type="checkbox" class="respuestaCorrecta"> <label >a)Sócrates</label>  <br>
-                            <input type="checkbox" > <label >b)Platón</label>  <br>
-                            <input type="checkbox" > <label >c)Aristóteles</label>  <br>
-                            <input type="checkbox" > <label >d)Descartes</label> <br>
-                            <input type="checkbox" class="respuestaIncorrecta"> <label >e)Kant</label>  <br>
-                        </div>
-                        <div>
-                            <p>UNMSM-2022</p>
-                            <p>¿Quién es considerado el padre de la filosofía occidental y uno de los filósofos más influyentes de la historia?</p>
-                            <input type="checkbox" class="respuestaCorrecta"> <label >a)Sócrates</label>  <br>
-                            <input type="checkbox" > <label >b)Platón</label>  <br>
-                            <input type="checkbox" > <label >c)Aristóteles</label>  <br>
-                            <input type="checkbox" > <label >d)Descartes</label> <br>
-                            <input type="checkbox" class="respuestaIncorrecta"> <label >e)Kant</label>  <br>
-                        </div>
-                        <br>
-                        <h4 class="text-info">Economía</h4>
-                        <div>
-                            <p>UNMSM-2022</p>
-                            <p>¿Qué concepto económico se refiere al aumento sostenido y generalizado de los precios de bienes y servicios en un país?</p>
-                            <input type="checkbox" > <label >a)Depreciación</label>  <br>
-                            <input type="checkbox" > <label >b)Inflación</label>  <br>
-                            <input type="checkbox" class="respuestaCorrecta"> <label >c)Deflación</label>  <br>
-                            <input type="checkbox" > <label >d)Recesión</label> <br>
-                            <input type="checkbox" class="respuestaIncorrecta"> <label >e)Mercado negro</label>  <br>
-                        </div>
-                        <div>
-                            <p>UNMSM-2022</p>
-                            <p>¿Qué concepto económico se refiere al aumento sostenido y generalizado de los precios de bienes y servicios en un país?</p>
-                            <input type="checkbox" > <label >a)Depreciación</label>  <br>
-                            <input type="checkbox" > <label >b)Inflación</label>  <br>
-                            <input type="checkbox" class="respuestaCorrecta"> <label >c)Deflación</label>  <br>
-                            <input type="checkbox" > <label >d)Recesión</label> <br>
-                            <input type="checkbox" class="respuestaIncorrecta"> <label >e)Mercado negro</label>  <br>
-                        </div>
-                        <div>
-                            <p>UNMSM-2022</p>
-                            <p>¿Qué concepto económico se refiere al aumento sostenido y generalizado de los precios de bienes y servicios en un país?</p>
-                            <input type="checkbox" > <label >a)Depreciación</label>  <br>
-                            <input type="checkbox" > <label >b)Inflación</label>  <br>
-                            <input type="checkbox" class="respuestaCorrecta"> <label >c)Deflación</label>  <br>
-                            <input type="checkbox" > <label >d)Recesión</label> <br>
-                            <input type="checkbox" class="respuestaIncorrecta"> <label >e)Mercado negro</label>  <br>
-                        </div>
-                        <div>
-                            <p>UNMSM-2022</p>
-                            <p>¿Qué concepto económico se refiere al aumento sostenido y generalizado de los precios de bienes y servicios en un país?</p>
-                            <input type="checkbox" > <label >a)Depreciación</label>  <br>
-                            <input type="checkbox" > <label >b)Inflación</label>  <br>
-                            <input type="checkbox" class="respuestaCorrecta"> <label >c)Deflación</label>  <br>
-                            <input type="checkbox" > <label >d)Recesión</label> <br>
-                            <input type="checkbox" class="respuestaIncorrecta"> <label >e)Mercado negro</label>  <br>
-                        </div>
-                        <h4 class="text-info">Comunicación</h4>
-                        <div>
-                            <p>UNMSM-2022</p>
-                            <p>¿Qué concepto se refiere a la transmisión de mensajes, ideas o información a través de medios como la televisión, la radio, la prensa escrita, Internet, entre otros?</p>
-                            <input type="checkbox" > <label >a)Comunicación interpersonal</label>  <br>
-                            <input type="checkbox" class="respuestaCorrecta"> <label >b)Comunicación de masas</label>  <br>
-                            <input type="checkbox" > <label >c)Comunicación corporativa</label>  <br>
-                            <input type="checkbox" > <label >d)Comunicación intercultural</label> <br>
-                            <input type="checkbox" class="respuestaIncorrecta"> <label >e)Comunicación intrapersonal</label>  <br>
-                        </div>
-                        <div>
-                            <p>UNMSM-2022</p>
-                            <p>¿Qué concepto se refiere a la transmisión de mensajes, ideas o información a través de medios como la televisión, la radio, la prensa escrita, Internet, entre otros?</p>
-                            <input type="checkbox" > <label >a)Comunicación interpersonal</label>  <br>
-                            <input type="checkbox" class="respuestaCorrecta"> <label >b)Comunicación de masas</label>  <br>
-                            <input type="checkbox" > <label >c)Comunicación corporativa</label>  <br>
-                            <input type="checkbox" > <label >d)Comunicación intercultural</label> <br>
-                            <input type="checkbox" class="respuestaIncorrecta"> <label >e)Comunicación intrapersonal</label>  <br>
-                        </div>
-                        <div>
-                            <p>UNMSM-2022</p>
-                            <p>¿Qué concepto se refiere a la transmisión de mensajes, ideas o información a través de medios como la televisión, la radio, la prensa escrita, Internet, entre otros?</p>
-                            <input type="checkbox" > <label >a)Comunicación interpersonal</label>  <br>
-                            <input type="checkbox" class="respuestaCorrecta"> <label >b)Comunicación de masas</label>  <br>
-                            <input type="checkbox" > <label >c)Comunicación corporativa</label>  <br>
-                            <input type="checkbox" > <label >d)Comunicación intercultural</label> <br>
-                            <input type="checkbox" class="respuestaIncorrecta"> <label >e)Comunicación intrapersonal</label>  <br>
-                        </div>
-                        <div>
-                            <p>UNMSM-2022</p>
-                            <p>¿Qué concepto se refiere a la transmisión de mensajes, ideas o información a través de medios como la televisión, la radio, la prensa escrita, Internet, entre otros?</p>
-                            <input type="checkbox" > <label >a)Comunicación interpersonal</label>  <br>
-                            <input type="checkbox" class="respuestaCorrecta"> <label >b)Comunicación de masas</label>  <br>
-                            <input type="checkbox" > <label >c)Comunicación corporativa</label>  <br>
-                            <input type="checkbox" > <label >d)Comunicación intercultural</label> <br>
-                            <input type="checkbox" class="respuestaIncorrecta"> <label >e)Comunicación intrapersonal</label>  <br>
-                        </div>
-                        <button class=" m-5 btn btn-outline-danger text-center btnEnviarRespuesta"> Enviar Respuestas</button>
-                        <div class="respuestaTotal" style="display:none;">
-                            <h3  class="text-center text-black " > Su puntaje es de : <span class="text-danger">40/100 </span></h3>
-                            <h5 class="text-danger text-center ">Cursos debiles a mejorar</h5>
-                            <ul>
-                                <li>Economía</li>
-                                <li>Comunicación</li>
-                                <li>Filosofía</li>
-                            </ul>
-                        </div>
-
-
+                </div-->
+                <form action="/home/evaluacion" method="post">
+                <div class="card m-2">
+                    <div th:each="preguntaDto, stat  : ${preguntas}">
+                        <label th:text="${index}"></label>
+                        <h2 class="text-center m-2 text-info" th:if="${stat.index == 0}">Historia del Perú</h2>
+                        <h2 class="text-center m-2 text-info" th:if="${stat.index== 3}">Economía</h2>
+                        <h2 class="text-center m-2 text-info" th:if="${stat.index== 6}">Filosofía</h2>
+                        <h2 class="text-center m-2 text-info" th:if="${stat.index== 9}">Historia Universal</h2>
+                        <h2 class="text-center m-2 text-info" th:if="${stat.index== 12}">Biologia</h2>
+                        <h2 class="text-center m-2 text-info" th:if="${stat.index== 15}">Comunicacion</h2>
+                        <h5 class="card-header">Pregunta: <label th:text="${stat.count}"></label>  <span th:text="${preguntaDto.pregunta.pregunta}"></span></h5>
+                        <ul class="list-group list-group-flush">
+                            <!-- Bucle para mostrar las alternativas de la pregunta actual -->
+                            <li th:each="alternativa : ${preguntaDto.alternativas}" class="list-group-item">
+                                <input type="radio" th:id="'pregunta_' + ${preguntaDto.pregunta.id}" th:name="'pregunta_' + ${preguntaDto.pregunta.id}" th:value="${alternativa.id}" />
+                                <label th:for="'pregunta_' + ${preguntaDto.pregunta.id}" th:text="${alternativa.pregunta}"></label>
+                            </li>
+                        </ul>
                     </div>
+                    <br>
                 </div>
+                    <button type="submit" class="btn btn-primary">Enviar respuestas</button>
+                </form>
+
 
             </div>
         </div>
