@@ -63,7 +63,7 @@ public class ResultadoServiceImpl implements ResultadoService{
         resultado.setFecha_realizada(fechaActual);
         resultado.setTiempo(horaHardcodeada);
         Pregunta pregunta = preguntaRepository.findPreguntaById(Integer.parseInt(id));
-        Curso curso = cursoRepository.findCursoById(pregunta.getId());
+        Curso curso = cursoRepository.findCursoById(pregunta.getCurso_id());
 
         resultado.setCurso(curso.getNombre());
 
