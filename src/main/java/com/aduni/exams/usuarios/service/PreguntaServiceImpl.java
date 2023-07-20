@@ -52,7 +52,7 @@ public class PreguntaServiceImpl implements PreguntaService {
     @Override
     public List<ResponsePreguntasDto> generarPreguntasByCurso(Integer idCurso) {
         List<ResponsePreguntasDto> responsePreguntasList = new ArrayList<>();
-        List<Pregunta> preguntas = preguntaRepository.findRandomPreguntasWithAlternativasByCursoId(idCurso,3);
+        List<Pregunta> preguntas = preguntaRepository.findRandomPreguntasWithAlternativasByCursoId(idCurso,20);
 
 
         for (Pregunta pregunta : preguntas){

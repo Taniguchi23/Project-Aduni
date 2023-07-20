@@ -74,7 +74,7 @@ public class ResultadoServiceImpl implements ResultadoService{
         List<Resultado> resultadoList =  resultadoRepository.findUltimosResultadosPorCadena(curso.getNombre(),idUsuario);
         Integer[] arregloEnteros = new Integer[5];
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 5; i > 0; i--) {
             if (i < resultadoList.size()) {
                 arregloEnteros[i] = (int) Math.round(resultadoList.get(i).getNota());
             } else {
