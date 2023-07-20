@@ -72,9 +72,9 @@ public class ResultadoServiceImpl implements ResultadoService{
     public Integer[] listarnotas(Integer idCurso, Integer idUsuario) {
         Curso curso = cursoRepository.findCursoById(idCurso);
         List<Resultado> resultadoList =  resultadoRepository.findUltimosResultadosPorCadena(curso.getNombre(),idUsuario);
-        Integer[] arregloEnteros = new Integer[5];
+        Integer[] arregloEnteros = new Integer[7];
 
-        for (int i = 5; i > 0; i--) {
+        for (int i = 7; i > 0; i--) {
             if (i < resultadoList.size()) {
                 arregloEnteros[i] = (int) Math.round(resultadoList.get(i).getNota());
             } else {
