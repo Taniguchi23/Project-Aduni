@@ -47,6 +47,11 @@ public class HomeController {
       //  model.addAttribute("skill", skill);
         return "/home/examenes/termino";
     }
+    @GetMapping("/entrada/nota")
+    public String termino(Model model,@ModelAttribute("resultado") Resultado resultado){
+        //  model.addAttribute("skill", skill);
+        return "/home/examenes/nota";
+    }
 
     @GetMapping("/generador")
     public String generador(Model model){
@@ -55,24 +60,22 @@ public class HomeController {
 
     @PostMapping("/evaluacion")
     public String procesarRespuestas(@RequestParam Map<String, String> allParams, RedirectAttributes redirectAttributes) {
-        // Aquí puedes acceder a las respuestas del examen enviadas desde el formulario
-        // El mapa "allParams" contendrá los nombres de los campos y los valores enviados
-        var nota = 0;
-        // Procesar las respuestas y guardar los resultados, por ejemplo:
-      /*  for (Map.Entry<String, String> entry : allParams.entrySet()) {
-            String preguntaId = entry.getKey().split("_")[1]; // Obtener el id de la pregunta del nombre del campo
-            String respuestaSeleccionada = entry.getValue(); // Obtener la alternativa seleccionada por el usuario
-            // Procesar la respuesta y guardarla en la base de datos si es necesario
-            if (preguntaService.resultadoPregunta(Integer.parseInt(preguntaId)) == Integer.parseInt(respuestaSeleccionada) ){
-                nota ++;
-            }
-        }*/
-
         Skill skill =  skillService.entregarNota(allParams);
-
-        // Redireccionar a una página de agradecimiento o resultados
-
         redirectAttributes.addFlashAttribute("skill", skill);
         return "redirect:/home/entrada/termino";
+    }
+
+    @PostMapping("/examen")
+    public String examen(@RequestParam("curso") String idCurso, Model model ){
+        List<ResponsePreguntasDto> responsePreguntasDtos = preguntaService.generarPreguntasByCurso(Integer.parseInt(idCurso));
+        model.addAttribute("preguntas", responsePreguntasDtos);
+        return "/home/examenes/examen";
+    }
+
+    @PostMapping("/corregir")
+    public String procesarRespuestasPOrCurso(@RequestParam Map<String, String> allParams, RedirectAttributes redirectAttributes) {
+        Resultado resultado =  resultadoService.entregarNota(allParams);
+        redirectAttributes.addFlashAttribute("resultado", resultado);
+        return "redirect:/home/entrada/nota";
     }
 }

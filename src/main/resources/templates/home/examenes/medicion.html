@@ -5,7 +5,7 @@
 
 <div layout:fragment="content">
     <div class="pagetitle">
-        <h1 class="text-info">Examén de medición</h1>
+        <h1 class="text-info">Examen de medición</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
@@ -19,54 +19,11 @@
 
             <div class="col-lg-12">
 
-<<<<<<< HEAD
-                <div class="card">
-                    <div class="card-body">
-                        <!-- General Form Elements -->
-                        <form>
 
-                            <fieldset class="row mb-3 mt-4">
-                                <legend class="col-form-label col-sm-2 pt-0"></legend> <p></p>
-                                <div class="col-sm-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios1" value="option1" >
-                                        <label class="form-check-label" for="gridRadios1">
-                                            UNMSM
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios1" value="option1" >
-                                        <label class="form-check-label" for="gridRadios1">
-                                            Villareal
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios1" value="option1" >
-                                        <label class="form-check-label" for="gridRadios1">
-                                            Cantuta
-                                        </label>
-                                    </div>
-                                </div>
-                            </fieldset>
-
-                            <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label"></label>
-                                <div class="col-sm-10">
-                                    <button type="button" class="btn btn-primary btnGenerar">Realizar examen</button>
-                                </div>
-                            </div>
-
-                        </form><!-- End General Form Elements -->
-=======
                 <!--div class="card">
                     <div th:each="preguntaDto : ${preguntas}">
                         <h3>Pregunta: <span th:text="${preguntaDto.pregunta.pregunta}"></span></h3>
                         <ul>
->>>>>>> 0737390d8027e3998f5766a0c1cb7702ca692395
 
                             <li th:each="alternativa : ${preguntaDto.alternativas}">
                                 <input type="radio" th:id="'pregunta_' + ${preguntaDto.pregunta.id}" th:name="'pregunta_' + ${preguntaDto.pregunta.id}" th:value="${alternativa.id}" />
@@ -78,7 +35,6 @@
                 <form action="/home/evaluacion" method="post">
                 <div class="card m-2">
                     <div th:each="preguntaDto, stat  : ${preguntas}">
-                        <label th:text="${index}"></label>
                         <h2 class="text-center m-2 text-info" th:if="${stat.index == 0}">Historia del Perú</h2>
                         <h2 class="text-center m-2 text-info" th:if="${stat.index== 3}">Economía</h2>
                         <h2 class="text-center m-2 text-info" th:if="${stat.index== 6}">Filosofía</h2>

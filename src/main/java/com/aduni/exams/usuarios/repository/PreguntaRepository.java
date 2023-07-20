@@ -15,8 +15,9 @@ public interface PreguntaRepository extends JpaRepository<Pregunta,Integer> {
     @Query(value = "SELECT p.* FROM preguntas p " +
             "INNER JOIN alternativas a ON p.id = a.pregunta_id " +
             "WHERE p.curso_id = :cursoId " +
-            "ORDER BY RAND() LIMIT 3", nativeQuery = true)
-    List<Pregunta> findRandomPreguntasWithAlternativasByCursoId(Integer cursoId);
+            "ORDER BY RAND() LIMIT :limit", nativeQuery = true)
+    List<Pregunta> findRandomPreguntasWithAlternativasByCursoId(Integer cursoId, Integer limit);
 
-
+    @Query("SELECT p FROM Pregunta p WHERE p.id = :id")
+    Pregunta findPreguntaById(int id);
 }

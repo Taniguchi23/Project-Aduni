@@ -20,110 +20,55 @@
             <div class="col-lg-12">
 
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body m-2">
                         <!-- General Form Elements -->
-                        <form>
-
-                            <fieldset class="row mb-3 mt-4">
-                                <legend class="col-form-label col-sm-2 pt-0">Universidad</legend> <p></p>
-                                <div class="col-sm-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios1" value="option1" >
-                                        <label class="form-check-label" for="gridRadios1">
-                                            UNMSM
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios1" value="option1" >
-                                        <label class="form-check-label" for="gridRadios1">
-                                            Villareal
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios1" value="option1" >
-                                        <label class="form-check-label" for="gridRadios1">
-                                            Cantuta
-                                        </label>
-                                    </div>
-                                </div>
-                            </fieldset>
-                            <fieldset class="row mb-3 mt-4">
-                                <legend class="col-form-label col-sm-2 pt-0">Fecha</legend> <p></p>
-                                <div class="col-sm-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" >
-                                        <label class="form-check-label" for="gridRadios1">
-                                            Mas antiguo
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" >
-                                        <label class="form-check-label" for="gridRadios1">
-                                            Mas reciente
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" >
-                                        <label class="form-check-label" for="gridRadios1">
-                                            Aleatorio
-                                        </label>
-                                    </div>
-                                </div>
-                            </fieldset>
+                        <form action="/home/examen" method="post">
                             <fieldset class="row mb-3">
                                 <legend class="col-form-label col-sm-2 pt-0">Cursos</legend> <p></p>
                                 <div class="col-sm-10">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="gridRadios1" id="gridRadios1" value="option2" >
-                                        <label class="form-check-label" for="gridRadios1">
+                                        <input class="form-check-input" type="radio" name="curso"  value="1" >
+                                        <label class="form-check-label" >
                                             Historia del Perú
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-sm-10">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="gridRadios2" id="gridRadios1" value="option4" >
-                                        <label class="form-check-label" for="gridRadios1">
+                                        <input class="form-check-input" type="radio" name="curso"  value="4" >
+                                        <label class="form-check-label" >
                                             Historia del Universal
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-sm-10">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios1" value="option3" >
-                                        <label class="form-check-label" for="gridRadios1">
+                                        <input class="form-check-input" type="radio" name="curso"  value="6" >
+                                        <label class="form-check-label" >
                                             Comunicación
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-sm-10">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="gridRadios4" id="gridRadios2" value="option5" >
-                                        <label class="form-check-label" for="gridRadios1">
+                                        <input class="form-check-input" type="radio" name="curso"  value="5" >
+                                        <label class="form-check-label">
                                             Biología
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-sm-10">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="gridRadios4" id="gridRadios2" value="option5" >
-                                        <label class="form-check-label" for="gridRadios1">
+                                        <input class="form-check-input" type="radio" name="curso" value="3" >
+                                        <label class="form-check-label" >
                                             Filosofía
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-sm-10">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="gridRadios4" id="gridRadios2" value="option5" >
-                                        <label class="form-check-label" for="gridRadios1">
+                                        <input class="form-check-input" type="radio" name="curso" value="2" >
+                                        <label class="form-check-label" >
                                             Economía
                                         </label>
                                     </div>
@@ -134,7 +79,7 @@
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label"></label>
                                 <div class="col-sm-10">
-                                    <button type="button" class="btn btn-primary btnGenerar">Generar examen</button>
+                                    <button type="submit" class="btn btn-primary btnGenerar">Generar examen</button>
                                 </div>
                             </div>
 
