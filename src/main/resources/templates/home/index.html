@@ -6,9 +6,20 @@
 <div layout:fragment="content">
   <div class="card-body pb-0">
     <h5 class="card-title">Kevin Anderson <span>| Mis Skills</span></h5>
+    <input type="hidden" th:value="${#strings.arrayJoin(antes, ',')}" id="antes">
+    <input type="hidden" th:value="${#strings.arrayJoin(ahora, ',')}" id="ahora">
     <div id="budgetChart" style="min-height: 400px;" class="echart"></div>
     <script>
             document.addEventListener("DOMContentLoaded", () => {
+              let inputTextantes = document.getElementById("antes").value;
+              let arrayStringsantes = inputTextantes.split(',');
+              let arrayEnterosantes = arrayStringsantes.map(str => parseInt(str));
+
+              let inputTextahora = document.getElementById("ahora").value;
+              let arrayStringsahora = inputTextahora.split(',');
+              let arrayEnterosahora = arrayStringsahora.map(str => parseInt(str));
+
+
                 var budgetChart = echarts.init(document.querySelector("#budgetChart")).setOption({
                     legend: {
                         data: ['Dominio Actual', 'Dominio Anterior']
@@ -17,27 +28,27 @@
                         // shape: 'circle',
                         indicator: [{
                             name: 'Historia del Perú',
-                            max: 6500
+                            max: 20
                         },
                             {
                                 name: 'Comunicación',
-                                max: 16000
+                                max: 20
                             },
                             {
                                 name: 'Biología',
-                                max: 30000
+                                max: 20
                             },
                             {
                                 name: 'Historia Universal',
-                                max: 38000
+                                max: 20
                             },
                             {
                                 name: 'Filosofía',
-                                max: 52000
+                                max: 20
                             },
                             {
                                 name: 'Economía',
-                                max: 25000
+                                max: 20
                             }
                         ]
                     },
@@ -45,11 +56,11 @@
                         name: 'Budget vs spending',
                         type: 'radar',
                         data: [{
-                            value: [2300, 3000, 20000, 35000, 50000, 18000],
+                            value: arrayEnterosahora,
                             name: 'Dominio Actual'
                         },
                             {
-                                value: [2700, 4000, 18000, 26000, 42000, 21000],
+                                value: arrayEnterosantes,
                                 name: 'Dominio Anterior'
                             }
                         ]
@@ -67,17 +78,27 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Biología</h5>
+            <input type="hidden" th:value="${#strings.arrayJoin(biologia, ',')}" id="biologia">
+            <input type="hidden" th:value="${#strings.arrayJoin(historia_universal, ',')}" id="historia_universal">
+            <input type="hidden" th:value="${#strings.arrayJoin(filosofia, ',')}" id="filosofia">
+            <input type="hidden" th:value="${#strings.arrayJoin(economia, ',')}" id="economia">
+            <input type="hidden" th:value="${#strings.arrayJoin(comunicacion, ',')}" id="comunicacion">
+            <input type="hidden" th:value="${#strings.arrayJoin(historia_peru, ',')}" id="historia_peru">
             <!-- Line Chart -->
             <canvas id="lineChart3" style="max-height: 400px;"></canvas>
             <script>
                             document.addEventListener("DOMContentLoaded", () => {
+                              let inputText = document.getElementById("biologia").value;
+                              let arrayStrings = inputText.split(',');
+                              let arrayEnteros = arrayStrings.map(str => parseInt(str));
+
                                 new Chart(document.querySelector('#lineChart3'), {
                                     type: 'line',
                                     data: {
-                                        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                                        labels: ['', '', '', '', '', '', ''],
                                         datasets: [{
                                             label: 'Puntaje',
-                                            data: [18, 20, 17, 17, 19, 17, 19],
+                                            data: arrayEnteros,
                                             fill: false,
                                             borderColor: 'rgb(75, 192, 192)',
                                             tension: 0.1
@@ -103,17 +124,21 @@
           <div class="card-body">
             <h5 class="card-title">Historia Universal</h5>
 
+
             <!-- Line Chart -->
             <canvas id="lineChart4" style="max-height: 400px;"></canvas>
             <script>
                             document.addEventListener("DOMContentLoaded", () => {
+                              let inputText = document.getElementById("historia_universal").value;
+                              let arrayStrings = inputText.split(',');
+                              let arrayEnteros = arrayStrings.map(str => parseInt(str));
                                 new Chart(document.querySelector('#lineChart4'), {
                                     type: 'line',
                                     data: {
-                                        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                                        labels: ['', '', '', '', '', '', ''],
                                         datasets: [{
                                             label: 'Puntaje',
-                                            data: [18, 18, 17, 17, 20, 19, 19],
+                                            data: arrayEnteros,
                                             fill: false,
                                             borderColor: 'rgb(75, 192, 192)',
                                             tension: 0.1
@@ -146,13 +171,16 @@
             <canvas id="lineChart5" style="max-height: 400px;"></canvas>
             <script>
                             document.addEventListener("DOMContentLoaded", () => {
+                              let inputText = document.getElementById("filosofia").value;
+                              let arrayStrings = inputText.split(',');
+                              let arrayEnteros = arrayStrings.map(str => parseInt(str));
                                 new Chart(document.querySelector('#lineChart5'), {
                                     type: 'line',
                                     data: {
-                                        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                                        labels: ['', '', '', '', '', '', ''],
                                         datasets: [{
                                             label: 'Puntaje',
-                                            data: [18, 20, 11, 17, 11, 12, 19],
+                                            data: arrayEnteros,
                                             fill: false,
                                             borderColor: 'rgb(75, 192, 192)',
                                             tension: 0.1
@@ -182,13 +210,16 @@
             <canvas id="lineChart6" style="max-height: 400px;"></canvas>
             <script>
                             document.addEventListener("DOMContentLoaded", () => {
+                              let inputText = document.getElementById("economia").value;
+                              let arrayStrings = inputText.split(',');
+                              let arrayEnteros = arrayStrings.map(str => parseInt(str));
                                 new Chart(document.querySelector('#lineChart6'), {
                                     type: 'line',
                                     data: {
-                                        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                                        labels: ['', '', '', '', '', '', ''],
                                         datasets: [{
                                             label: 'Puntaje',
-                                            data: [18, 15, 11, 17, 16, 12, 19],
+                                            data: arrayEnteros,
                                             fill: false,
                                             borderColor: 'rgb(75, 192, 192)',
                                             tension: 0.1
@@ -221,13 +252,16 @@
             <canvas id="lineChart" style="max-height: 400px;"></canvas>
             <script>
                             document.addEventListener("DOMContentLoaded", () => {
+                              let inputText = document.getElementById("comunicacion").value;
+                              let arrayStrings = inputText.split(',');
+                              let arrayEnteros = arrayStrings.map(str => parseInt(str));
                                 new Chart(document.querySelector('#lineChart'), {
                                     type: 'line',
                                     data: {
-                                        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                                        labels: ['', '', '', '', '', '', ''],
                                         datasets: [{
                                             label: 'Puntaje',
-                                            data: [8, 20, 11, 17, 11, 12, 10],
+                                            data: arrayEnteros,
                                             fill: false,
                                             borderColor: 'rgb(75, 192, 192)',
                                             tension: 0.1
@@ -252,18 +286,21 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Historia del Perú</h5>
-
             <!-- Line Chart -->
             <canvas id="lineChart2" style="max-height: 400px;"></canvas>
-            <script>
+            <script >
                             document.addEventListener("DOMContentLoaded", () => {
+                              let inputText = document.getElementById("historia_peru").value;
+                              let arrayStrings = inputText.split(',');
+                              let arrayEnteros = arrayStrings.map(str => parseInt(str));
+
                                 new Chart(document.querySelector('#lineChart2'), {
                                     type: 'line',
                                     data: {
-                                        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                                        labels: ['', '', '', '', '', '', ''],
                                         datasets: [{
                                             label: 'Puntaje',
-                                            data: [18, 20, 11, 7, 11, 12, 9],
+                                            data: arrayEnteros,
                                             fill: false,
                                             borderColor: 'rgb(75, 192, 192)',
                                             tension: 0.1

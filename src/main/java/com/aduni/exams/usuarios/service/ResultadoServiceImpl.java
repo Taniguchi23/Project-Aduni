@@ -64,11 +64,24 @@ public class ResultadoServiceImpl implements ResultadoService{
         resultado.setTiempo(horaHardcodeada);
         Pregunta pregunta = preguntaRepository.findPreguntaById(Integer.parseInt(id));
         Curso curso = cursoRepository.findCursoById(pregunta.getCurso_id());
-
         resultado.setCurso(curso.getNombre());
-
         return  resultadoRepository.save(resultado);
     }
 
+    @Override
+    public Integer[] listarnotas(Integer idCurso, Integer idUsuario) {
+        Curso curso = cursoRepository.findCursoById(idCurso);
+        List<Resultado> resultadoList =  resultadoRepository.findUltimosResultadosPorCadena(curso.getNombre(),idUsuario);
+        Integer[] arregloEnteros = new Integer[5];
+
+        for (int i = 0; i < 5; i++) {
+            if (i < resultadoList.size()) {
+                arregloEnteros[i] = (int) Math.round(resultadoList.get(i).getNota());
+            } else {
+                arregloEnteros[i] = 0;
+            }
+        }
+        return arregloEnteros;
+    }
 
 }

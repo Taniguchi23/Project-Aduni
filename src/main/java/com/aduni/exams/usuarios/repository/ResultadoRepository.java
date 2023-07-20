@@ -12,4 +12,7 @@ import java.util.List;
 public interface ResultadoRepository extends JpaRepository<Resultado, Integer> {
     @Query("SELECT r FROM Resultado r  WHERE r.usuario_id = :id  ORDER BY r.id DESC ")
     List<Resultado> findResultado(@Param("id") int id);
+
+    @Query("SELECT r FROM Resultado r WHERE r.curso = :cadena and r.usuario_id = :idUsuario ORDER BY r.id DESC")
+    List<Resultado> findUltimosResultadosPorCadena(String cadena, Integer idUsuario);
 }

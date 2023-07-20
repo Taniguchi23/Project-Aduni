@@ -113,4 +113,9 @@ public class SkillServiceImpl implements SkillService {
         }
 
     }
+
+    @Override
+    public Skill buscarSkill(Integer idUsuario) {
+        return skillRepository.findFirstByUsuarioId(idUsuario);
+    }
 }

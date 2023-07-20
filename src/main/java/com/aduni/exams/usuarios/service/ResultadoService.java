@@ -9,4 +9,6 @@ import java.util.Map;
 public interface ResultadoService {
     List<Resultado> listaResultados(int Id);
     Resultado entregarNota(Map<String, String> allParams);
+
+    Integer[] listarnotas (Integer idCurso, Integer idUsuario);
 }

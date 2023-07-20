@@ -6,5 +6,5 @@ import java.util.Map;
 
 public interface SkillService {
     Skill entregarNota(Map<String, String> allParams);
-
+    Skill buscarSkill(Integer idUsuario);
 }

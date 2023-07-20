@@ -17,8 +17,5 @@ public class WebController {
         return "web/index";
     }
 
-    @GetMapping("/home")
-    public String home(){
-        return "home/index";
-    }
+
 }

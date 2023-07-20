@@ -28,6 +28,31 @@ public class HomeController {
 
     @Autowired
     private SkillService skillService;
+    @GetMapping
+    public String home(Model model){
+        Skill skill =  skillService.buscarSkill(1);
+        Integer[] ahora = {skill.getHistoria_peru_b(), skill.getComunicacion_b(),skill.getBiologia_b(),skill.getHistoria_universal_b(),skill.getFilosofia_b(),skill.getEconomia_b()};
+        Integer[] antes = {skill.getHistoria_peru_a(), skill.getComunicacion_a(),skill.getBiologia_a(),skill.getHistoria_universal_a(),skill.getFilosofia_a(),skill.getEconomia_a()};
+        Integer[] biologia = resultadoService.listarnotas(5,1);
+        Integer[] historia_universal = resultadoService.listarnotas(4,1);
+        Integer[] filosofia = resultadoService.listarnotas(3,1);
+        Integer[] economia = resultadoService.listarnotas(2,1);
+        Integer[] comunicacion = resultadoService.listarnotas(6,1);
+        Integer[] historia_peru = resultadoService.listarnotas(1,1);
+
+        model.addAttribute("biologia",biologia);
+        model.addAttribute("historia_universal",historia_universal);
+        model.addAttribute("filosofia",filosofia);
+        model.addAttribute("economia",economia);
+        model.addAttribute("comunicacion",comunicacion);
+        model.addAttribute("historia_peru",historia_peru);
+        model.addAttribute("ahora",ahora);
+        model.addAttribute("antes",antes);
+
+        return "home/index";
+    }
+
+
     @GetMapping("/historial")
     public String historial(Model model){
         List<Resultado> listaResultado = resultadoService.listaResultados(1);
